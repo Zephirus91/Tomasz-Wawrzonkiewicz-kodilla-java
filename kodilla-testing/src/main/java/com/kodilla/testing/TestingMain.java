@@ -22,7 +22,7 @@ public class TestingMain {
 
         System.out.println("\n Testing calculator \n");
 
-        if (sum.equals(52) & subs.equals(-4)) {
+        if (sum.equals(52) && subs.equals(-4)) {
             System.out.println("Test OK");
         } else {
             System.out.println("Error !");
