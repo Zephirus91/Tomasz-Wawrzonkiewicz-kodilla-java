@@ -11,17 +11,18 @@ import java.util.List;
 
 public class CollectionTestSuite {
     @BeforeEach
-    public void before() {System.out.println("Test begin");}
+    public void before() {System.out.println("Checking list of numbers");}
 
     @AfterEach
-    public void after() {System.out.println("Test end");}
+    public void after() {System.out.println("This numbers are odd");}
 
     @DisplayName("When create list with no values, " +
             "then one.exterminate(randomNumbers) shouldn't return no values")
     @Test
-    void testOddNumbersExterminatorEmptyList() {
+    public void testOddNumbersExterminatorEmptyList() {
         //Given
         List<Integer> randomNumbers = new ArrayList<>();
+        OddNumbersExterminator one = new OddNumbersExterminator();
         //When
         List<Integer> result = one.exterminate(randomNumbers);
         //Then
@@ -33,6 +34,7 @@ public class CollectionTestSuite {
     @Test
     void testOddNumbersExterminatorNormalList() {
         //Given
+        OddNumbersExterminator one = new OddNumbersExterminator();
         List<Integer> randomNumbers = new ArrayList<>();
         randomNumbers.add(12);
         randomNumbers.add(25);
