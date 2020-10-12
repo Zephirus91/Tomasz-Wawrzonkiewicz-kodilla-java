@@ -1,10 +1,6 @@
 package com.kodilla.testing.collection;
 
-import org.junit.Test;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,9 +48,8 @@ public class CollectionTestSuite {
         oddNumbers.add(44);
         //When
         List<Integer> result = one.exterminate(randomNumbers);
-        List<Integer> oddList = oddNumbers;
         //Then
-        Assertions.assertEquals(oddList, result);
+        Assertions.assertEquals(oddNumbers, result);
     }
 
 }

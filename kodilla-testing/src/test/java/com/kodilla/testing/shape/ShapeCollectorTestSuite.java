@@ -39,10 +39,10 @@ public class ShapeCollectorTestSuite {
         shapeCollector.addFigure(new Triangle(1,1));
 
         //When
-        Shape retrievedShape = shapeCollector.getFigure(0);
+        int retrievedShape = shapeCollector.getFigure(0);
 
         //Then
-        Assertions.assertEquals();
+
 
 
     }
