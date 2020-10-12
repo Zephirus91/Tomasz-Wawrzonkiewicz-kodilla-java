@@ -10,7 +10,7 @@ public class CollectionTestSuite {
     public void before() {System.out.println("Checking list of numbers");}
 
     @AfterEach
-    public void after() {System.out.println("This numbers are odd");}
+    public void after() {System.out.println("List is checked");}
 
     @DisplayName("When create list with no values, " +
             "then one.exterminate(randomNumbers) shouldn't return no values")
@@ -19,8 +19,6 @@ public class CollectionTestSuite {
         //Given
         List<Integer> randomNumbers = new ArrayList<>();
         List<Integer> emptyList = new ArrayList<>();
-        System.out.println("Size of randomNumbers list is: " + randomNumbers.size());
-        System.out.println("Size of emptyList list is: " + emptyList.size());
         OddNumbersExterminator one = new OddNumbersExterminator();
         //When
         List<Integer> result = one.exterminate(randomNumbers);
