@@ -3,6 +3,9 @@ package com.kodilla.testing.shape;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ShapeCollectorTestSuite {
 
     @Test
@@ -12,9 +15,10 @@ public class ShapeCollectorTestSuite {
 
         //When
         shapeCollector.addFigure(new Triangle(1,1));
+        Triangle triangle = new Triangle(1,1);
 
         //Then
-        Assertions.assertEquals(1, shapeCollector.getFigure(0));
+        Assertions.assertEquals(1, shapeCollector.getFigure(triangle));
     }
 
     @Test
@@ -25,10 +29,11 @@ public class ShapeCollectorTestSuite {
 
         //When
         boolean result = shapeCollector.removeFigure(new Triangle(1,1));
+        Triangle triangle = new Triangle(1,1);
 
         //Then
         Assertions.assertTrue(result);
-        Assertions.assertEquals(0, shapeCollector.getFigure(0)); //tutaj wg. mnie powinienem mieć kolejną klasę w ShapeCollector pokazującą wielkość listy
+        Assertions.assertEquals(0, shapeCollector.getFigure(triangle));
 
     }
 
@@ -36,27 +41,14 @@ public class ShapeCollectorTestSuite {
     public void testGetFigure() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector(new Triangle(1,1));
-        shapeCollector.addFigure(new Triangle(1,1));
+        Shape triangle = new Triangle(1,1);
+        shapeCollector.addFigure(triangle);
 
         //When
-        int retrievedShape = shapeCollector.getFigure(0);
+        Shape result = shapeCollector.getFigure(triangle);
 
         //Then
-
-
-
-    }
-
-    @Test
-    public void testShowFigures() {
-        //Given
-        ShapeCollector shapeCollector = new ShapeCollector(new Triangle(1,1));
-
-        //When
-        shapeCollector.showFigures();
-
-        //Then
-        Assertions.assertEquals("Circle, Square, Triangle", shapeCollector.showFigures());
+        Assertions.assertEquals(triangle, result);
 
     }
 }

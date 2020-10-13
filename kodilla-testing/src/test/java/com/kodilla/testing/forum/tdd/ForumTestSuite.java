@@ -3,10 +3,10 @@ package com.kodilla.testing.forum.tdd;
 import com.kodilla.testing.forum.ForumComment;
 import com.kodilla.testing.forum.ForumPost;
 import com.kodilla.testing.forum.ForumUser;
-import org.junit.Test;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.Nested;
 
-@DisplayName("TDD: Forum Test Suite \uD83D\uDE31")
+@DisplayName("TDD: Forum Test Suite")
 public class ForumTestSuite {
 
     private static int testCounter = 0;

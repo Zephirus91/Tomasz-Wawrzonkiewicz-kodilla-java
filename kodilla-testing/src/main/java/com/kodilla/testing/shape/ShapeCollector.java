@@ -20,8 +20,8 @@ public class ShapeCollector {
         return true;
     }
 
-    public int getFigure(int n) {
-        return 10;
+    public Shape getFigure(Shape shape) {
+        return null;
     }
 
     public String showFigures() {
