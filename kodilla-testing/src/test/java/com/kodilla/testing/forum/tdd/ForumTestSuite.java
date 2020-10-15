@@ -23,6 +23,7 @@ public class ForumTestSuite {
 
     @BeforeEach
     public void beforeEveryTest() {
+        testCounter++;
         System.out.println("Preparing to execute test #" + testCounter);
     }
 
