@@ -20,7 +20,7 @@ public class ShapeCollector {
         return true;
     }
 
-    public Shape getFigure(Shape shape) {
+    public Shape getFigure(int n) {
         return null;
     }
 
