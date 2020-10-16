@@ -91,7 +91,4 @@ public class WeatherForecastTestSuite {
         Assertions.assertEquals(26.1, median);
 
     }
-
-
-
 }
