@@ -4,7 +4,6 @@ import com.kodilla.testing.forum.ForumComment;
 import com.kodilla.testing.forum.ForumPost;
 import com.kodilla.testing.forum.ForumUser;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.Nested;
 
 @DisplayName("TDD: Forum Test Suite")
 public class ForumTestSuite {
@@ -27,47 +26,53 @@ public class ForumTestSuite {
         System.out.println("Preparing to execute test #" + testCounter);
     }
 
-    @Test
-    public void testAddPost() {
-        //Given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+    @Nested
+    class aa {
+        @Test
+        public void testAddPost() {
+            //Given
+            ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
 
-        //When
-        forumUser.addPost("mrsmith",
-                "hello everyone. this is my first contribution here !");
+            //When
+            forumUser.addPost("mrsmith",
+                    "hello everyone. this is my first contribution here !");
 
-        //Then
-        Assertions.assertEquals(1, forumUser.getPostsQuantity());
+            //Then
+            Assertions.assertEquals(1, forumUser.getPostsQuantity());
+        }
     }
 
-    @Test
-    public void testAddComment() {
-        //Given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
-        ForumPost thePost = new ForumPost("Hello everyone, this is my first contribution here",
-                "mrsmith");
+    @Nested
+    class abc {
+        @Test
+        public void testAddComment() {
+            //Given
+            ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+            ForumPost thePost = new ForumPost("Hello everyone, this is my first contribution here",
+                    "mrsmith");
 
-        //When
-        forumUser.addComment(thePost, "mrsmith", "Thank tou for all good words");
+            //When
+            forumUser.addComment(thePost, "mrsmith", "Thank tou for all good words");
 
-        //Then
-        Assertions.assertEquals(1, forumUser.getCommentsQuantity());
-    }
+            //Then
+            Assertions.assertEquals(1, forumUser.getCommentsQuantity());
+        }
 
-    @Test
-    public void testGetPost() {
-        //Given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
-        ForumPost thePost = new ForumPost("Hello everyone, " +
-                "this is my first contribution here!", "mrsmith");
-        forumUser.addPost(thePost.getAuthor(), thePost.getPostBody());
+        @Test
+        public void testGetPost() {
+            //Given
+            ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+            ForumPost thePost = new ForumPost("Hello everyone, " +
+                    "this is my first contribution here!", "mrsmith");
+            forumUser.addPost(thePost.getAuthor(), thePost.getPostBody());
 
-        //When
-        ForumPost retrievedPost;
-        retrievedPost = forumUser.getPost(0);
+            //When
+            ForumPost retrievedPost;
+            retrievedPost = forumUser.getPost(0);
 
-        //Then
-        Assertions.assertEquals(thePost, retrievedPost);
+            //Then
+            Assertions.assertEquals(thePost, retrievedPost);
+        }
     }
 
     @Test
