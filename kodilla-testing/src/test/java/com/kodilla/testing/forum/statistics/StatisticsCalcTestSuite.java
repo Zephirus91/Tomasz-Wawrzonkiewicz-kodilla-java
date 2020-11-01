@@ -11,7 +11,7 @@ import static org.mockito.Mockito.when;
 
 public class StatisticsCalcTestSuite {
 
-   /* @Mock
+    @Mock
     private Statistics statisticsMock;
 
     @Test
@@ -126,5 +126,5 @@ public class StatisticsCalcTestSuite {
         Assertions.assertEquals(100,quantityOfUsers);
 
 
-    }*/
+    }
 }
