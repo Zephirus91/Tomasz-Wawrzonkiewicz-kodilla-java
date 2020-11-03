@@ -15,7 +15,7 @@ public class StatisticsCalcTestSuite {
     private Statistics statisticsMock;
 
     @Test
-    void testCalculateAdvStatisticsPostsNull() {
+    void testCalculateAdvStatisticsPostsZero() {
 
         //Given
         StatisticsCalc statisticsCalc = new StatisticsCalc(statisticsMock);
@@ -23,7 +23,7 @@ public class StatisticsCalcTestSuite {
         when(statisticsMock.postsCount()).thenReturn(postsCount1);
 
         //When
-        int quantityOfPosts = statisticsCalc.calculateAdvStatistics();
+        int quantityOfPosts = statisticsCalc.calculateAdvStatistics(statisticsMock);
 
         //Then
         Assertions.assertEquals(0,quantityOfPosts);
@@ -126,5 +126,5 @@ public class StatisticsCalcTestSuite {
         Assertions.assertEquals(100,quantityOfUsers);
 
 
-    }
+    }*/
 }

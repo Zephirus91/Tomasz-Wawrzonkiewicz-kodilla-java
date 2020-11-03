@@ -4,8 +4,8 @@ import java.util.stream.IntStream;
 
 public interface ArrayOperations {
 
-    /*static void getAverage(int[] numbers) {
-        int number = IntStream.range(0, numbers.length)
+    static void getAverage(int[] numbers) {
+        IntStream.range(0, numbers.length)
                 .forEach(System.out::println);
-    }*/
+    }
 }

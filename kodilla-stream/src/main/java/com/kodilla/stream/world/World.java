@@ -6,19 +6,14 @@ import java.util.List;
 
 public final class World {
 
-    public void continentsList() {
+    private List<Continent> continents = new ArrayList<>();
 
-        List<String> continents = new ArrayList<>();
-        continents.add("Asia");
-        continents.add("Africa");
-        continents.add("Europe");
-        continents.add("North America");
-        continents.add("South America");
-        continents.add("Australia");
+    public void addContinent(Continent continent) {
+        continents.add(continent);
     }
 
-    /*public BigDecimal getTotalPeople() {
-        BigDecimal totalPeople = continents.stream();
+    /*public BigDecimal getPeopleQuantity() {
+
     }*/
 
 

@@ -7,14 +7,15 @@ public final class ForumUser {
     private final int userId;
     private final String userName;
     private final char sex;
-    //private final LocalDate birthDate;
+    private final LocalDate birthDate;
     private final int postsNumber;
 
-    public ForumUser(int userId, String userName, char sex, /* LocalDate birthDate, */ int postsNumber) {
+    public ForumUser(final int userId, final String userName, final char sex, LocalDate birthDate, final int postsNumber) {
         this.userId = userId;
         this.userName = userName;
         this.sex = sex;
         this.postsNumber = postsNumber;
+        this.birthDate = birthDate;
     }
 
     public int getUserId() {
@@ -29,9 +30,9 @@ public final class ForumUser {
         return sex;
     }
 
-    /* public LocalDate getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
-    } */
+    }
 
     public int getPostsNumber() {
         return postsNumber;
@@ -39,6 +40,7 @@ public final class ForumUser {
 
     @Override
     public String toString() {
-        return "User ID number: " + userId + ". User Name: " + userName + ". Sex: " + sex + ". Posts number: " + postsNumber;
+        return "User ID number: " + userId + ". User Name: " + userName +
+                ". Sex: " + sex + ". Posts number: " + postsNumber;
     }
 }
