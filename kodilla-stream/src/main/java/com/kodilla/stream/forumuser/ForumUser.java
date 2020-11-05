@@ -39,8 +39,37 @@ public final class ForumUser {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ForumUser forumUser = (ForumUser) o;
+
+        if (userId != forumUser.userId) return false;
+        if (sex != forumUser.sex) return false;
+        if (postsNumber != forumUser.postsNumber) return false;
+        if (!userName.equals(forumUser.userName)) return false;
+        return birthDate.equals(forumUser.birthDate);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = userId;
+        result = 31 * result + userName.hashCode();
+        result = 31 * result + (int) sex;
+        result = 31 * result + birthDate.hashCode();
+        result = 31 * result + postsNumber;
+        return result;
+    }
+
+    @Override
     public String toString() {
-        return "User ID number: " + userId + ". User Name: " + userName +
-                ". Sex: " + sex + ". Posts number: " + postsNumber;
+        return "ForumUser{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", sex=" + sex +
+                ", birthDate=" + birthDate +
+                ", postsNumber=" + postsNumber +
+                '}';
     }
 }

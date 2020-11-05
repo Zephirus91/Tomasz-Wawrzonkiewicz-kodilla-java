@@ -18,15 +18,23 @@ public class StatisticsCalcTestSuite {
     void testCalculateAdvStatisticsPostsZero() {
 
         //Given
+
         StatisticsCalc statisticsCalc = new StatisticsCalc(statisticsMock);
+        List<String> users1 = new ArrayList<>();
+        users1.add(1,"John");
+        users1.add(2,"Jack");
         int postsCount1 = 0;
+        int comments1 = 10;
+
+        when(statisticsMock.usersNames()).thenReturn(users1);
         when(statisticsMock.postsCount()).thenReturn(postsCount1);
+        when(statisticsMock.commentsCount()).thenReturn(comments1);
 
         //When
-        int quantityOfPosts = statisticsCalc.calculateAdvStatistics(statisticsMock);
+        statisticsCalc.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assertions.assertEquals(0,quantityOfPosts);
+        Assertions.assertEquals(0, statisticsCalc.getPosts());
 
     }
 
@@ -35,30 +43,40 @@ public class StatisticsCalcTestSuite {
 
         //Given
         StatisticsCalc statisticsCalc = new StatisticsCalc(statisticsMock);
-        int postsCount1 = 1000;
+        List<String> users1 = new ArrayList<>();
+        int postsCount1 = 10;
+        int comments1 = 10;
+
+        when(statisticsMock.usersNames()).thenReturn(users1);
         when(statisticsMock.postsCount()).thenReturn(postsCount1);
+        when(statisticsMock.commentsCount()).thenReturn(comments1);
 
         //When
-        int quantityOfPosts = statisticsCalc.calculateAdvStatistics();
+        statisticsCalc.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assertions.assertEquals(1000, quantityOfPosts);
+        Assertions.assertEquals(1000, statisticsCalc.getPosts());
 
     }
 
     @Test
-    void testCalculateAdvStatisticsCommentsNull() {
+    void testCalculateAdvStatisticsCommentsZero() {
 
         //Given
         StatisticsCalc statisticsCalc = new StatisticsCalc(statisticsMock);
-        int commentsCount1 = 0;
-        when(statisticsMock.commentsCount()).thenReturn(commentsCount1);
+        List<String> users1 = new ArrayList<>();
+        int postsCount1 = 0;
+        int comments1 = 0;
+
+        when(statisticsMock.usersNames()).thenReturn(users1);
+        when(statisticsMock.postsCount()).thenReturn(postsCount1);
+        when(statisticsMock.commentsCount()).thenReturn(comments1);
 
         //When
-        int quantityOfComments = statisticsCalc.calculateAdvStatistics();
+        statisticsCalc.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assertions.assertEquals(0, quantityOfComments);
+        Assertions.assertEquals(0, statisticsCalc.getComments());
 
     }
 
@@ -67,14 +85,19 @@ public class StatisticsCalcTestSuite {
 
         //Given
         StatisticsCalc statisticsCalc = new StatisticsCalc(statisticsMock);
-        int commentsCount = 10;
-        int postsCount = 20;
+        List<String> users1 = new ArrayList<>();
+        int postsCount1 = 0;
+        int comments1 = 0;
+
+        when(statisticsMock.usersNames()).thenReturn(users1);
+        when(statisticsMock.postsCount()).thenReturn(postsCount1);
+        when(statisticsMock.commentsCount()).thenReturn(comments1);
 
         //When
-        boolean commentsLessThanPosts = commentsCount < postsCount;
+        statisticsCalc.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assertions.assertTrue(commentsLessThanPosts);
+        Assertions.assertTrue(false);
 
     }
 
@@ -83,14 +106,19 @@ public class StatisticsCalcTestSuite {
 
         //Given
         StatisticsCalc statisticsCalc = new StatisticsCalc(statisticsMock);
-        int commentsCount = 20;
-        int postsCount = 10;
+        List<String> users1 = new ArrayList<>();
+        int postsCount1 = 0;
+        int comments1 = 0;
+
+        when(statisticsMock.usersNames()).thenReturn(users1);
+        when(statisticsMock.postsCount()).thenReturn(postsCount1);
+        when(statisticsMock.commentsCount()).thenReturn(comments1);
 
         //When
-        boolean commentsMoreThanPosts = commentsCount > postsCount;
+        statisticsCalc.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assertions.assertTrue(commentsMoreThanPosts);
+        Assertions.assertTrue(false);
 
     }
 
@@ -99,14 +127,19 @@ public class StatisticsCalcTestSuite {
 
         //Given
         StatisticsCalc statisticsCalc = new StatisticsCalc(statisticsMock);
-        List<String> namesOfUsers = new ArrayList<>();
-        when(statisticsMock.usersNames()).thenReturn(namesOfUsers);
+        List<String> users1 = new ArrayList<>();
+        int postsCount1 = 0;
+        int comments1 = 0;
+
+        when(statisticsMock.usersNames()).thenReturn(users1);
+        when(statisticsMock.postsCount()).thenReturn(postsCount1);
+        when(statisticsMock.commentsCount()).thenReturn(comments1);
 
         //When
-        int quantityOfUsers = statisticsCalc.calculateAdvStatistics().size();
+        statisticsCalc.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assertions.assertEquals(0,quantityOfUsers);
+        Assertions.assertEquals(0, statisticsCalc.getUsers());
 
     }
 
@@ -115,16 +148,20 @@ public class StatisticsCalcTestSuite {
 
         //Given
         StatisticsCalc statisticsCalc = new StatisticsCalc(statisticsMock);
-        List<String> namesOfUsers = new ArrayList<>(); //Jak tutaj dodać 100 użytkowników ?
-        namesOfUsers.add("Tom Qwerty");
-        when(statisticsMock.usersNames()).thenReturn(namesOfUsers);
+        List<String> users1 = new ArrayList<>();
+        int postsCount1 = 0;
+        int comments1 = 0;
+
+        when(statisticsMock.usersNames()).thenReturn(users1);
+        when(statisticsMock.postsCount()).thenReturn(postsCount1);
+        when(statisticsMock.commentsCount()).thenReturn(comments1);
 
         //When
-        int quantityOfUsers = statisticsCalc.calculateAdvStatistics().size();
+        statisticsCalc.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assertions.assertEquals(100,quantityOfUsers);
+        Assertions.assertEquals(100, statisticsCalc.getUsers());
 
 
-    }*/
+    }
 }
