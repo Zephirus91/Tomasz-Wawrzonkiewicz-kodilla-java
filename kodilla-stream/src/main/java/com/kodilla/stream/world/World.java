@@ -19,9 +19,6 @@ public final class World {
                 .map(Continent::getCountries)
                 .collect(Collectors.toSet());
 
-        BigDecimal peopleQuantity = new BigDecimal("1000000000");
-        return peopleQuantity;
-
     }*/
 
 

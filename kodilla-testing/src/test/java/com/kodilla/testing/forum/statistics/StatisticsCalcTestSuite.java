@@ -21,10 +21,10 @@ public class StatisticsCalcTestSuite {
 
         StatisticsCalc statisticsCalc = new StatisticsCalc(statisticsMock);
         List<String> users1 = new ArrayList<>();
-        users1.add(1,"John");
-        users1.add(2,"Jack");
+        users1.add("John");
+        users1.add("Jack");
         int postsCount1 = 0;
-        int comments1 = 10;
+        int comments1 = 0;
 
         when(statisticsMock.usersNames()).thenReturn(users1);
         when(statisticsMock.postsCount()).thenReturn(postsCount1);
@@ -34,7 +34,12 @@ public class StatisticsCalcTestSuite {
         statisticsCalc.calculateAdvStatistics(statisticsMock);
 
         //Then
+        Assertions.assertEquals(2, statisticsCalc.getUsers());
         Assertions.assertEquals(0, statisticsCalc.getPosts());
+        Assertions.assertEquals(0, statisticsCalc.getComments());
+        Assertions.assertEquals(0, statisticsCalc.getPostsPerUser());
+        Assertions.assertEquals(0, statisticsCalc.getCommentsPerUser());
+        Assertions.assertEquals(0, statisticsCalc.getCommentsPerPost());
 
     }
 
