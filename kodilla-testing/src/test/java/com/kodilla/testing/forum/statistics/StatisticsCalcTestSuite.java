@@ -24,7 +24,7 @@ public class StatisticsCalcTestSuite {
         users1.add("John");
         users1.add("Jack");
         int postsCount1 = 0;
-        int comments1 = 0;
+        int comments1 = 10;
 
         when(statisticsMock.usersNames()).thenReturn(users1);
         when(statisticsMock.postsCount()).thenReturn(postsCount1);

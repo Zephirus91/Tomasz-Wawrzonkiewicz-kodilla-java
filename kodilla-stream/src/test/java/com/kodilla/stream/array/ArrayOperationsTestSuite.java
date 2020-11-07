@@ -19,7 +19,7 @@ public class ArrayOperationsTestSuite {
         //When
 
         //Then
-        //Assert.assertEquals(20, ArrayOperations.getAverage(numbers));
+        Assert.assertEquals(20, ArrayOperations.getAverage(numbers));
 
 
     }
