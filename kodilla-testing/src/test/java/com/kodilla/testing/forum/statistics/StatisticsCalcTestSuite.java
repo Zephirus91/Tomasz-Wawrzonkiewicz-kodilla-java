@@ -190,10 +190,9 @@ public class StatisticsCalcTestSuite {
         //Given
         StatisticsCalc statisticsCalc = new StatisticsCalc(statisticsMock);
         List<String> users1 = new ArrayList<>();
-        users1.add("John");
-        users1.add("Jack");
-        int postsCount1 = 0;
-        int comments1 = 0;
+        users1.add("a");
+        int postsCount1 = 10;
+        int comments1 = 10;
 
         when(statisticsMock.usersNames()).thenReturn(users1);
         when(statisticsMock.postsCount()).thenReturn(postsCount1);
@@ -203,7 +202,7 @@ public class StatisticsCalcTestSuite {
         statisticsCalc.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assertions.assertEquals(2, statisticsCalc.getUsers());
+        Assertions.assertEquals(100, statisticsCalc.getUsers());
         Assertions.assertEquals(0, statisticsCalc.getPosts());
         Assertions.assertEquals(0, statisticsCalc.getComments());
         Assertions.assertEquals(0, statisticsCalc.getPostsPerUser());
