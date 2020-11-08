@@ -20,8 +20,5 @@ public class ArrayOperationsTestSuite {
 
         //Then
         Assert.assertEquals(20, ArrayOperations.getAverage(numbers), 0.1);
-
-
-
     }
 }

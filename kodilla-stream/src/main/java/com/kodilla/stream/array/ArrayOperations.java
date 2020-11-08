@@ -12,6 +12,5 @@ public interface ArrayOperations {
                 .average()
                 .getAsDouble();
         return sum;
-
     }
 }
