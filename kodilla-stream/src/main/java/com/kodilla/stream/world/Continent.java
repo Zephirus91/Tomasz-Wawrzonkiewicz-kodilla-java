@@ -23,4 +23,27 @@ public final class Continent {
     public List<Country> getCountries() {
         return countries;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Continent continent = (Continent) o;
+
+        return name.equals(continent.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Continent{" +
+                "name='" + name + '\'' +
+                ", countries=" + countries +
+                '}';
+    }
 }

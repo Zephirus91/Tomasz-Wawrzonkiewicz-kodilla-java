@@ -41,7 +41,7 @@ public class StatisticsCalcTestSuite {
         Assertions.assertEquals(0, statisticsCalc.getPosts());
         Assertions.assertEquals(10, statisticsCalc.getComments());
         Assertions.assertEquals(0, statisticsCalc.getPostsPerUser());
-        Assertions.assertEquals(0, statisticsCalc.getCommentsPerUser());
+        Assertions.assertEquals(5, statisticsCalc.getCommentsPerUser());
         Assertions.assertEquals(0, statisticsCalc.getCommentsPerPost());
 
     }
@@ -190,9 +190,11 @@ public class StatisticsCalcTestSuite {
         //Given
         StatisticsCalc statisticsCalc = new StatisticsCalc(statisticsMock);
         List<String> users1 = new ArrayList<>();
-        users1.add("a");
-        int postsCount1 = 10;
-        int comments1 = 10;
+        for (int n = 0; n < 100; n++) {
+            users1.add("Random User");
+        }
+        int postsCount1 = 100;
+        int comments1 = 100;
 
         when(statisticsMock.usersNames()).thenReturn(users1);
         when(statisticsMock.postsCount()).thenReturn(postsCount1);
@@ -203,11 +205,11 @@ public class StatisticsCalcTestSuite {
 
         //Then
         Assertions.assertEquals(100, statisticsCalc.getUsers());
-        Assertions.assertEquals(0, statisticsCalc.getPosts());
-        Assertions.assertEquals(0, statisticsCalc.getComments());
-        Assertions.assertEquals(0, statisticsCalc.getPostsPerUser());
-        Assertions.assertEquals(0, statisticsCalc.getCommentsPerUser());
-        Assertions.assertEquals(0, statisticsCalc.getCommentsPerPost());
+        Assertions.assertEquals(100, statisticsCalc.getPosts());
+        Assertions.assertEquals(100, statisticsCalc.getComments());
+        Assertions.assertEquals(1, statisticsCalc.getPostsPerUser());
+        Assertions.assertEquals(1, statisticsCalc.getCommentsPerUser());
+        Assertions.assertEquals(1, statisticsCalc.getCommentsPerPost());
 
     }
 }

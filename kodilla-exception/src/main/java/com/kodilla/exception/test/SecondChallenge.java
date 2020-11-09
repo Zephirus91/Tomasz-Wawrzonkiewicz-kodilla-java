@@ -8,4 +8,7 @@ public class SecondChallenge {
         }
         return "Done!";
     }
+    public static void main(String[] args) {
+
+    }
 }

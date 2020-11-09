@@ -18,4 +18,27 @@ public final class Country {
     public BigDecimal getPeopleQuantity() {
         return peopleQuantity;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Country country = (Country) o;
+
+        return name.equals(country.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Country{" +
+                "name='" + name + '\'' +
+                ", peopleQuantity=" + peopleQuantity +
+                '}';
+    }
 }

@@ -17,9 +17,18 @@ public class StatisticsCalc {
         posts = statistics.postsCount();
         comments = statistics.commentsCount();
         users = statistics.usersNames().size();
-        postsPerUser = statistics.postsCount() / statistics.usersNames().size();
-        commentsPerUser = statistics.commentsCount() / statistics.usersNames().size();
-        commentsPerPost = statistics.commentsCount() / statistics.postsCount();
+        if (statistics.usersNames().size() == 0) {
+            postsPerUser = 0;
+            commentsPerUser = 0;
+        } else {
+            postsPerUser = statistics.postsCount() / statistics.usersNames().size();
+            commentsPerUser = statistics.commentsCount() / statistics.usersNames().size();
+        }
+        if (statistics.postsCount() == 0) {
+            commentsPerPost = 0;
+        } else {
+            commentsPerPost = statistics.commentsCount() / statistics.postsCount();
+        }
     }
 
     public int getPosts() {

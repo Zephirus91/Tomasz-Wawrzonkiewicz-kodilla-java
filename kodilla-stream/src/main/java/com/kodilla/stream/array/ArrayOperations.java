@@ -8,9 +8,9 @@ public interface ArrayOperations {
         IntStream.range(0, numbers.length)
                 .forEach(System.out::println);
 
-        double sum = IntStream.range(0, numbers.length)
+        double average = IntStream.range(0, numbers.length)
                 .average()
                 .getAsDouble();
-        return sum;
+        return average;
     }
 }

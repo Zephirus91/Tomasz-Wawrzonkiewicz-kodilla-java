@@ -3,6 +3,7 @@ package com.kodilla.stream.portfolio;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -148,6 +149,20 @@ public class BoardTestSuite {
 
     @Test
     public void testAddTaskListAverageWorkingOnTask() {
+
+        //Given
+        Board project = prepareTestData();
+        Period period = Period.between(LocalDate.now(), LocalDate.now().plusDays(5));
+
+        //When
+        List<TaskList> inProgressTask = new ArrayList<>();
+        inProgressTask.add(new TaskList("In progress"));
+        long averageWorkingTime = project.getTaskLists().stream()
+                .filter(inProgressTask::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .count();
+
+        //Then
 
     }
 }
