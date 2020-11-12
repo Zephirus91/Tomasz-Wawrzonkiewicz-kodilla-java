@@ -18,10 +18,10 @@ public class FirstChallenge {
 
         FirstChallenge firstChallenge = new FirstChallenge();
 
-        try {double result = firstChallenge.divide(3, 2);
+        try {double result = firstChallenge.divide(3, 0);
             System.out.println(result);
         } catch (ArithmeticException aExp) {
-            System.out.println("Division by zero");
+            System.out.println("Don't divide by zero");
         } finally {
             System.out.println("I am gonna be here... always!");
         }
