@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -157,12 +158,26 @@ public class BoardTestSuite {
         //When
         List<TaskList> inProgressTask = new ArrayList<>();
         inProgressTask.add(new TaskList("In progress"));
-        long averageWorkingTime = project.getTaskLists().stream()
+
+        long SumOfWorkingTime = project.getTaskLists().stream()
+                .filter(inProgressTask::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .map(task -> ChronoUnit.DAYS.between(task.getCreated(), LocalDate.now()))
+                .count();
+
+        long NumberOfTasks = project.getTaskLists().stream()
                 .filter(inProgressTask::contains)
                 .flatMap(tl -> tl.getTasks().stream())
                 .count();
 
+        System.out.println(SumOfWorkingTime);
+        System.out.println(NumberOfTasks);
+
+        long AverageWorkingTime = SumOfWorkingTime / NumberOfTasks;
+
         //Then
+
+        assertEquals(10 ,AverageWorkingTime);
 
     }
 }
