@@ -35,15 +35,12 @@ public final class TaskList {
 
         TaskList taskList = (TaskList) o;
 
-        if (!tasks.equals(taskList.tasks)) return false;
-        return name.equals(taskList.name);
+        return name != null ? name.equals(taskList.name) : taskList.name == null;
     }
 
     @Override
     public int hashCode() {
-        int result = tasks.hashCode();
-        result = 31 * result + name.hashCode();
-        return result;
+        return name != null ? name.hashCode() : 0;
     }
 
     @Override

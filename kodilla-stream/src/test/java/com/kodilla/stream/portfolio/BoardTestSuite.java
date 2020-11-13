@@ -154,30 +154,23 @@ public class BoardTestSuite {
         //Given
         Board project = prepareTestData();
         Period period = Period.between(LocalDate.now(), LocalDate.now().plusDays(5));
-
-        //When
         List<TaskList> inProgressTask = new ArrayList<>();
         inProgressTask.add(new TaskList("In progress"));
 
-        long SumOfWorkingTime = project.getTaskLists().stream()
+        //When
+
+        double average = project.getTaskLists().stream()
                 .filter(inProgressTask::contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .map(task -> ChronoUnit.DAYS.between(task.getCreated(), LocalDate.now()))
-                .count();
+                .mapToLong(task -> ChronoUnit.DAYS.between(task.getCreated(), LocalDate.now()))
+                .average()
+                .getAsDouble();
 
-        long NumberOfTasks = project.getTaskLists().stream()
-                .filter(inProgressTask::contains)
-                .flatMap(tl -> tl.getTasks().stream())
-                .count();
 
-        System.out.println(SumOfWorkingTime);
-        System.out.println(NumberOfTasks);
-
-        long AverageWorkingTime = SumOfWorkingTime / NumberOfTasks;
 
         //Then
 
-        assertEquals(10 ,AverageWorkingTime);
+        assertEquals(10 ,average);
 
     }
 }
