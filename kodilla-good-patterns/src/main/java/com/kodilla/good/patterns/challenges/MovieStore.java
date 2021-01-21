@@ -33,7 +33,7 @@ public class MovieStore {
         return listOfAllStrings;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {  //skrót "psvm"
         System.out.println(MovieStore.join());
     }
 
