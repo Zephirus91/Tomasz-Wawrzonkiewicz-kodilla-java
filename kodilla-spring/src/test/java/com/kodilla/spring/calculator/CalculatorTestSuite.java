@@ -19,7 +19,6 @@ public class CalculatorTestSuite {
 
         //Then
         assertEquals(10, result);
-
     }
 
     @Test
@@ -34,7 +33,6 @@ public class CalculatorTestSuite {
 
         //Then
         assertEquals(15, result);
-
     }
 
     @Test
@@ -49,7 +47,6 @@ public class CalculatorTestSuite {
 
         //Then
         assertEquals(11.5, result);
-
     }
 
     @Test
@@ -64,6 +61,5 @@ public class CalculatorTestSuite {
 
         //Then
         assertEquals(1.6, result);
-
     }
 }
