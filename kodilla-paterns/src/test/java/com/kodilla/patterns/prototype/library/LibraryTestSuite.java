@@ -12,10 +12,11 @@ public class LibraryTestSuite {
     void testGetBooks() {
         //Given
         //Creating books
-        for (int i = 0; i < 10; i++){
-            Book book = new Book("book title: book no. " + i,"book author: author no. " + i,
-                    LocalDate.of(1991,10,10));
+        for (int i = 0; i < 10; i++) {
+            Book book = new Book("book title: book no. " + i, "book author: author no. " + i,
+                    LocalDate.of(1991, 10, 10));
         }
+
 
 
         //creating library and assigning the books
