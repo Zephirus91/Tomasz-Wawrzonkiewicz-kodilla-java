@@ -22,16 +22,12 @@ public class Library extends Prototype<Library> {
         return books;
     }
 
-    public Library shallowCopy() throws CloneNotSupportedException {
-        return super.clone();
+    public void setName(String name) {
+        this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Library{" +
-                "name='" + name + '\'' +
-                ", books=" + books +
-                '}';
+    public Library shallowCopy() throws CloneNotSupportedException {
+        return super.clone();
     }
 
     public Library deepCopy() throws CloneNotSupportedException {
