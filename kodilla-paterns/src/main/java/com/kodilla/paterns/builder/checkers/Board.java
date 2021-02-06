@@ -7,7 +7,7 @@ public class Board {
     private final Figure[][] board = new Figure[10][];
 
     public Board() {
-        for (int n =0; n < 10; n++) {
+        for (int n = 0; n < 10; n++) {
             board[n] = new Figure[10];
         }
     }
@@ -24,9 +24,9 @@ public class Board {
         String result = "";
         for (int n = MIN_INDEX; n <= MAX_INDEX; n++) {
             result += "|";
-            for (int k = MIN_INDEX; k <= MAX_INDEX; n++) {
+            for (int k = MIN_INDEX; k <= MAX_INDEX; k++) {
                 if (board[n][k] == null) {
-                    result += " ";
+                    result += "  ";
                 } else {
                     result += (board[n][k]).getColor().equals(Figure.BLACK) ? "b" : "w";
                     result += (board[n][k]) instanceof Pawn ? "P" : "Q";
