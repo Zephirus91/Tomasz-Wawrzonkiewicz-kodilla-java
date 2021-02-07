@@ -8,7 +8,7 @@ public class Bigmac {
     private final String bun;
     private final int burgers;
     private final String sauce;
-    private List<String> ingredients = new ArrayList<>();
+    private List<String> ingredients;
 
     public static class BigmacBuilder {
         private String bun;
@@ -41,7 +41,7 @@ public class Bigmac {
         }
     }
 
-    public Bigmac(String bun, int burgers, String sauce, List<String> ingredients) {
+    private Bigmac(String bun, int burgers, String sauce, List<String> ingredients) {
         this.bun = bun;
         this.burgers = burgers;
         this.sauce = sauce;
