@@ -12,6 +12,12 @@ import java.util.List;
                 " where substring(company_name, 1, 3) = :initials",
         resultClass = Company.class
 )
+
+@NamedQuery(
+        name = "Company.findByPartName",
+        query = "from Company where name like concat(\'%\',:COMPANY_NAME, \'%\')"
+)
+
 @Entity
 @Table(name = "companies")
 public class Company {
