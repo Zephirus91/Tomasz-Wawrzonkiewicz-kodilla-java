@@ -17,7 +17,6 @@ public class FacebookTestingApp {
     public static final String BIRTH_DAY = "//div[contains(@class, \"u_d_l_O0\"/span/select[1]";
     public static final String BIRTH_MONTH = "//div[contains(@class, \"u_d_l_O0\"/span/select[2]";
     public static final String BIRTH_YEAR = "//div[contains(@class, \"u_d_l_O0\"/span/select[3]";
-    public static final String SEX_FEMALE = "//div[contains(@class, \"_5k_3\"/span[1]/input";
     public static final String SEX_MALE = "//div[contains(@class, \"_5k_3\"/span[2]/input";
     public static final String SECOND_REGISTER_ACCOUNT = "//div[contains(@class, \"_1lch\"/button";
 
@@ -58,9 +57,6 @@ public class FacebookTestingApp {
         WebElement enterBirthYear = driver.findElement(By.xpath(BIRTH_YEAR));
         Select selectYear = new Select(enterBirthYear);
         selectYear.selectByIndex(30);
-
-        WebElement chooseFemaleSex = driver.findElement(By.xpath(SEX_FEMALE));
-        chooseFemaleSex.click();
 
         WebElement chooseMaleSex = driver.findElement(By.xpath(SEX_MALE));
         chooseMaleSex.click();
