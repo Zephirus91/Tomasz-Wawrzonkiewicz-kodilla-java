@@ -1,7 +1,5 @@
 package com.kodilla.good.patterns.challenges.Food2Door;
 
-
-
 public class OrderApplication {
 
     public static void main(String[] args) {
